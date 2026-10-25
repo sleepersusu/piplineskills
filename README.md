@@ -11,8 +11,18 @@
 
 ## 安裝
 
+用 SSH clone。新電腦還沒設定 GitHub SSH key 的話，先產生一把並加到 GitHub（Settings → SSH and GPG keys → New SSH key）：
+
 ```bash
-git clone https://github.com/sleepersusu/piplineskills.git
+ssh-keygen -t ed25519 -C "s900808sw@gmail.com"
+cat ~/.ssh/id_ed25519.pub
+ssh -T git@github.com
+```
+
+最後一行看到 `Hi sleepersusu!` 就代表設定好了。接著：
+
+```bash
+git clone git@github.com:sleepersusu/piplineskills.git
 cd piplineskills
 ./install.sh
 ```
